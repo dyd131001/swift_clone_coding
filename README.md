@@ -1,6 +1,5 @@
-#fruitMart
-스윗한 swift UI 클론 코딩
-https://github.com/giftbott/SweetSwiftUI
+# SweetSwiftUI 교재 실습 프로젝트
+* [교재 github](https://github.com/giftbott/SweetSwiftUI)
 
 ## 메인화면
 <img width="365" alt="Screenshot 2024-04-26 at 12 32 09 PM" src="https://github.com/dyd131001/swift_clone_coding/assets/100686513/96889034-2c9d-43f0-8ae3-bedf06ba7b27">
