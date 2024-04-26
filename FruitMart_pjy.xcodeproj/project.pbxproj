@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7018DDF82BD138370016EC58 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018DDF72BD138370016EC58 /* ProductDetailView.swift */; };
+		70A0D83B2BC8E11000AA35D4 /* BundleExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0D83A2BC8E11000AA35D4 /* BundleExtention.swift */; };
+		70A0D83D2BC8E3BC00AA35D4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0D83C2BC8E3BC00AA35D4 /* Store.swift */; };
+		70B97FA52BDB44E8003CDBBA /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B97FA42BDB44E8003CDBBA /* Preview.swift */; };
 		70FAEDAA2BBEE2D8003DEE12 /* FruitMart_pjyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FAEDA92BBEE2D8003DEE12 /* FruitMart_pjyApp.swift */; };
 		70FAEDAC2BBEE2D8003DEE12 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FAEDAB2BBEE2D8003DEE12 /* Home.swift */; };
 		70FAEDAE2BBEE2D8003DEE12 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FAEDAD2BBEE2D8003DEE12 /* Item.swift */; };
@@ -39,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7018DDF72BD138370016EC58 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		70A0D83A2BC8E11000AA35D4 /* BundleExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtention.swift; sourceTree = "<group>"; };
+		70A0D83C2BC8E3BC00AA35D4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		70B97FA42BDB44E8003CDBBA /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		70FAEDA62BBEE2D8003DEE12 /* FruitMart_pjy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitMart_pjy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FAEDA92BBEE2D8003DEE12 /* FruitMart_pjyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitMart_pjyApp.swift; sourceTree = "<group>"; };
 		70FAEDAB2BBEE2D8003DEE12 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -51,7 +59,6 @@
 		70FAEDC62BBEE2DB003DEE12 /* FruitMart_pjyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitMart_pjyUITests.swift; sourceTree = "<group>"; };
 		70FAEDC82BBEE2DB003DEE12 /* FruitMart_pjyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitMart_pjyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		70FAEDD52BBEE431003DEE12 /* ProductData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductData.json; sourceTree = "<group>"; };
-		70FAEDD72BBEE4A9003DEE12 /* FruitMart-pjy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FruitMart-pjy-Info.plist"; sourceTree = SOURCE_ROOT; };
 		70FAEDDD2BBEE8B0003DEE12 /* ProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
 		70FAEDE12BBEEB96003DEE12 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		70FAEDE42BBEED7A003DEE12 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -82,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70B97FA32BDB44D0003CDBBA /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				70B97FA42BDB44E8003CDBBA /* Preview.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		70FAED9D2BBEE2D8003DEE12 = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +124,6 @@
 				70FAEDDF2BBEEB5E003DEE12 /* Helper */,
 				70FAEDDC2BBEE54F003DEE12 /* Resource */,
 				70FAEDD82BBEE504003DEE12 /* Source */,
-				70FAEDD72BBEE4A9003DEE12 /* FruitMart-pjy-Info.plist */,
 				70FAEDAD2BBEE2D8003DEE12 /* Item.swift */,
 				70FAEDB12BBEE2DB003DEE12 /* Preview Content */,
 			);
@@ -171,6 +185,7 @@
 			children = (
 				70FAEDAB2BBEE2D8003DEE12 /* Home.swift */,
 				70FAEDDD2BBEE8B0003DEE12 /* ProductRow.swift */,
+				7018DDF72BD138370016EC58 /* ProductDetailView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -187,6 +202,7 @@
 		70FAEDDF2BBEEB5E003DEE12 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				70B97FA32BDB44D0003CDBBA /* CustomView */,
 				70FAEDE02BBEEB6B003DEE12 /* Extension */,
 			);
 			path = Helper;
@@ -196,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				70FAEDE12BBEEB96003DEE12 /* ColorExtension.swift */,
+				70A0D83A2BC8E11000AA35D4 /* BundleExtention.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -204,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				70FAEDE42BBEED7A003DEE12 /* Product.swift */,
+				70A0D83C2BC8E3BC00AA35D4 /* Store.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -342,9 +360,13 @@
 				70FAEDDE2BBEE8B0003DEE12 /* ProductRow.swift in Sources */,
 				70FAEDAC2BBEE2D8003DEE12 /* Home.swift in Sources */,
 				70FAEDAE2BBEE2D8003DEE12 /* Item.swift in Sources */,
+				70A0D83D2BC8E3BC00AA35D4 /* Store.swift in Sources */,
+				70B97FA52BDB44E8003CDBBA /* Preview.swift in Sources */,
 				70FAEDAA2BBEE2D8003DEE12 /* FruitMart_pjyApp.swift in Sources */,
+				70A0D83B2BC8E11000AA35D4 /* BundleExtention.swift in Sources */,
 				70FAEDE22BBEEB96003DEE12 /* ColorExtension.swift in Sources */,
 				70FAEDE52BBEED7A003DEE12 /* Product.swift in Sources */,
+				7018DDF82BD138370016EC58 /* ProductDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

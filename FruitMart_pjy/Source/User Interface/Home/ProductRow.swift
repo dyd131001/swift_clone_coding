@@ -11,7 +11,7 @@ struct ProductRow: View {
     let product: Product
     var body: some View {
         HStack {
-            ProductImage
+            productImage
             productDescription
         }
         .frame(height: 150)
@@ -23,13 +23,9 @@ struct ProductRow: View {
 }
 
 
-#Preview {
-    ProductRow(product: productSamples[0])
-}
-
 
 private extension ProductRow{
-    var ProductImage: some View {
+    var productImage: some View {
         Image(product.imageName) // 상품 이미지
             .resizable()
             .scaledToFill()
@@ -70,4 +66,18 @@ private extension ProductRow{
             .padding([.top, .trailing])
     }
 
+}
+
+struct ProductRow_Previews: PreviewProvider {
+    static var previews: some View {
+            Group {
+                ForEach(productSamples) {
+                    ProductRow(product: $0)
+                }
+                ProductRow(product: productSamples[0])
+                    .preferredColorScheme(.dark)
+            }
+            .padding()
+            .previewLayout(.sizeThatFits)
+    }
 }

@@ -8,6 +8,7 @@
 import Foundation
 
 struct Product {
+    let id = UUID()
     let name : String
     let imageName : String
     let price : Int
@@ -30,3 +31,6 @@ Product(name: "시원한 수박"
 Product(name: "베리베리 블루베리"
 , imageName: "blueberry", price: 2300, description: "타임지 선정 10대 파워 푸드. 신이 내린 선물이라 불리는 블루베리에요")
 ]
+
+extension Product: Decodable {}
+extension Product: Identifiable {}

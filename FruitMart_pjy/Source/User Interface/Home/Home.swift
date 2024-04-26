@@ -6,26 +6,30 @@
 //
 
 import SwiftUI
-import SwiftData
+
 
 struct Home: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
 
-    var body: some View {
-        VStack {
-            Text("2019110485 박정용")
-            ProductRow(product: productSamples[0])
-            ProductRow(product: productSamples[1])
-            ProductRow(product: productSamples[2])
-        }
+    let store: Store
+    
         
-
+    var body: some View {
+    
+        NavigationView {
+            VStack{
+                List(store.products) { product in
+                    NavigationLink(destination:  ProductDetailView(product: product)){
+                        ProductRow(product: product)
+                    }
+                }
+                .navigationBarTitle("과일마트")
+            }
+        }
     }
 }
 
-#Preview {
-    Home()
-        .modelContainer(for: Item.self, inMemory: true)
+struct Home_Previews: PreviewProvider {
+    static var previews: some View {
+        Preview(source: Home(store: Store()))
+    }
 }
-

@@ -25,8 +25,9 @@ struct FruitMart_pjyApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Home()
+            Home(store : Store())
         }
         .modelContainer(sharedModelContainer)
     }
 }
+
