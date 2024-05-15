@@ -54,10 +54,7 @@ private extension ProductRow{
         HStack(spacing: 0){ // HStack 내 자식 뷰 사이의 간격을 0으로 지정
             Text("￦").font(.footnote) + Text("\(product.price)").font(.headline) // 가격 정보
             Spacer()
-            Image(systemName: "heart") // 하트 아이콘
-                .imageScale(.large)
-                .foregroundColor(Color.peach1)
-                .frame(width: 32, height: 32)
+            FavoriteButton(product: product)
             Image(systemName: "cart") // 카트 아이콘
                 .foregroundColor(Color.peach1)
                 .frame(width: 32, height: 32)

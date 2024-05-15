@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ProductDetailView: View {
     let product: Product
+    @EnvironmentObject private var store: Store
+    @State private var showingAlert: Bool = false
+    @State private var quantity: Int = 1
     
     var body: some View {
         VStack(spacing: 0) {
@@ -16,6 +19,7 @@ struct ProductDetailView: View {
             orderView
         }
         .ignoresSafeArea(edges:.top)
+        .alert(isPresented: $showingAlert) { confirmAlert }
     }
 }
 
@@ -52,14 +56,14 @@ private extension ProductDetailView{
                     .font(.largeTitle).fontWeight(.medium)
                     .foregroundColor(.black)
                 Spacer()
-                Image(systemName: "heart") // 즐겨찾기 버튼
-                    .imageScale(.large)
-                    .foregroundColor(Color.peach)
-                    .frame(width: 32, height: 32)
+                FavoriteButton(product: product)
             }
             Text(splitText(product.description)) // 상품 설명
                 .foregroundColor(.secondaryText)
                 .fixedSize() // 뷰의 크기가 작아져도 텍스트가 생략되지 않고 온전히 표현됨
+            Text("2019110485 박정용")
+                .font(.largeTitle).fontWeight(.medium)
+                .foregroundColor(.black)
         }
     }
     func splitText(
@@ -75,12 +79,14 @@ private extension ProductDetailView{
     }
     
     var priceInfo: some View {
-        HStack {
+        let price = quantity * product.price
+        return HStack {
             (Text("￦") // 통화 기호는 작게 나타내고 가격만 더 크게 표시
-             + Text("\(product.price)")
+             + Text("\(price)")
                 .font(.title)
             ).fontWeight(.medium)
             Spacer()
+            QuantitySelector(quantity: $quantity)
             // 수량 선택 버튼이 들어갈 위치 - 챕터 5에서 구현
         }
         // 배경을 다크 모드에서도 항상 흰색이 되게 지정해 텍스트도 항상 검은색이 되게 지정
@@ -88,7 +94,9 @@ private extension ProductDetailView{
     }
     
     var placeOrderButton: some View { // 주문하기 버튼
-        Button(action: { }) {
+        Button(action: {
+            self.showingAlert = true
+        }) {
             Capsule()
                 .fill(Color.peach)
             // 너비는 주어진 공간을 최대로 사용하고 높이는 최소, 최대치 지정
@@ -101,6 +109,21 @@ private extension ProductDetailView{
                 .padding(.vertical, 8)
         }
     }
+    
+    var confirmAlert: Alert {
+        Alert(title: Text("주문 확인"),
+              message: Text("\(product.name)을(를) \(quantity)개 구매하겠습니까?"),
+              primaryButton: .default(Text("확인"), action: {
+                    self.placeOrder()
+            }),
+              secondaryButton: .cancel(Text("취소"))
+        )
+    }
+    
+    func placeOrder() {
+    store.placeOrder(product: product, quantity: quantity)
+    }
+    
 }
 
 struct ProductDetailView_Previews: PreviewProvider {

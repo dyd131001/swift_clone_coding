@@ -10,17 +10,19 @@ import SwiftUI
 
 struct Home: View {
 
-    let store: Store
+    @EnvironmentObject private var store: Store
     
         
     var body: some View {
     
         NavigationView {
             VStack{
+                Text("2019110485 박정용")
                 List(store.products) { product in
                     NavigationLink(destination:  ProductDetailView(product: product)){
                         ProductRow(product: product)
                     }
+                    //.buttonStyle(PlainButtonStyle()) // .onTapGesture
                 }
                 .navigationBarTitle("과일마트")
             }
@@ -30,6 +32,7 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Preview(source: Home(store: Store()))
+        Preview(source: Home())
+        .environmentObject(Store())
     }
 }

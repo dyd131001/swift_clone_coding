@@ -34,3 +34,4 @@ Product(name: "베리베리 블루베리"
 
 extension Product: Decodable {}
 extension Product: Identifiable {}
+extension Product: Equatable {}
