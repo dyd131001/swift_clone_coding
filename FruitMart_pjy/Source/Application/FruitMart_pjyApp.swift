@@ -24,11 +24,20 @@ struct FruitMart_pjyApp: App {
     }()
 
     var body: some Scene {
-        WindowGroup {
+        configurationAppearance()
+        return WindowGroup {
             Home()
+                .accentColor(Color.primary)
                 .environmentObject(Store())
         }
         .modelContainer(sharedModelContainer)
+    }
+    
+    private func configurationAppearance() {
+        // large 디스플레이 모드에서 적용
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "peach")!]
+        // inline 디스플레이 모드일 때 적용
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(named: "peach")!]
     }
 }
 
