@@ -105,6 +105,7 @@ private extension ProductDetailView{
                 )
                 .padding(.vertical, 8)
         }
+        .buttonStyle(ShrinkButtonStyle())
     }
     
     var confirmAlert: Alert {
