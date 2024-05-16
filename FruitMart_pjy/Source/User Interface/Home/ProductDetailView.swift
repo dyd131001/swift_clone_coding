@@ -12,13 +12,15 @@ struct ProductDetailView: View {
     @EnvironmentObject private var store: Store
     @State private var showingAlert: Bool = false
     @State private var quantity: Int = 1
+    @State private var showingPopup: Bool = false
     
     var body: some View {
         VStack(spacing: 0) {
             productImage
             orderView
         }
-        .ignoresSafeArea(edges:.top)
+        .popup(isPresented: $showingPopup) {OrderCompletedMessage()}
+        .edgesIgnoringSafeArea(.top)
         .alert(isPresented: $showingAlert) { confirmAlert }
     }
 }
@@ -119,7 +121,10 @@ private extension ProductDetailView{
     }
     
     func placeOrder() {
+    // 주문 정보 저장하기
     store.placeOrder(product: product, quantity: quantity)
+    // 팝업 나타내기
+    showingPopup = true
     }
     
 }

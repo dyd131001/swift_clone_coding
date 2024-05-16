@@ -11,6 +11,8 @@
 		704F6B832BF5C40300F14C38 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704F6B822BF5C40300F14C38 /* Symbol.swift */; };
 		704F6B852BF5C4CD00F14C38 /* ResizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704F6B842BF5C4CC00F14C38 /* ResizedImage.swift */; };
 		704F6B882BF5C97300F14C38 /* ShrinkButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704F6B872BF5C97300F14C38 /* ShrinkButtonStyle.swift */; };
+		704F6B8B2BF5CB1A00F14C38 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704F6B8A2BF5CB1A00F14C38 /* Popup.swift */; };
+		704F6B8D2BF5CF8700F14C38 /* OrderCompletedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704F6B8C2BF5CF8700F14C38 /* OrderCompletedMessage.swift */; };
 		705E3FED2BE4921200D4F70B /* QuantitySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705E3FEC2BE4921200D4F70B /* QuantitySelector.swift */; };
 		70A0D83B2BC8E11000AA35D4 /* BundleExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0D83A2BC8E11000AA35D4 /* BundleExtention.swift */; };
 		70A0D83D2BC8E3BC00AA35D4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0D83C2BC8E3BC00AA35D4 /* Store.swift */; };
@@ -53,6 +55,8 @@
 		704F6B822BF5C40300F14C38 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		704F6B842BF5C4CC00F14C38 /* ResizedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizedImage.swift; sourceTree = "<group>"; };
 		704F6B872BF5C97300F14C38 /* ShrinkButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkButtonStyle.swift; sourceTree = "<group>"; };
+		704F6B8A2BF5CB1A00F14C38 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		704F6B8C2BF5CF8700F14C38 /* OrderCompletedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompletedMessage.swift; sourceTree = "<group>"; };
 		705E3FEC2BE4921200D4F70B /* QuantitySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantitySelector.swift; sourceTree = "<group>"; };
 		70A0D83A2BC8E11000AA35D4 /* BundleExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtention.swift; sourceTree = "<group>"; };
 		70A0D83C2BC8E3BC00AA35D4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -107,6 +111,14 @@
 				704F6B872BF5C97300F14C38 /* ShrinkButtonStyle.swift */,
 			);
 			path = CustomStyle;
+			sourceTree = "<group>";
+		};
+		704F6B892BF5CADE00F14C38 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				704F6B8A2BF5CB1A00F14C38 /* Popup.swift */,
+			);
+			path = ViewModifier;
 			sourceTree = "<group>";
 		};
 		70B97FA32BDB44D0003CDBBA /* CustomView */ = {
@@ -210,6 +222,7 @@
 				7018DDF72BD138370016EC58 /* ProductDetailView.swift */,
 				705E3FEC2BE4921200D4F70B /* QuantitySelector.swift */,
 				70D499762BED12D5004292E3 /* FavoriteButton.swift */,
+				704F6B8C2BF5CF8700F14C38 /* OrderCompletedMessage.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -226,6 +239,7 @@
 		70FAEDDF2BBEEB5E003DEE12 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				704F6B892BF5CADE00F14C38 /* ViewModifier */,
 				704F6B862BF5C94C00F14C38 /* CustomStyle */,
 				70B97FA32BDB44D0003CDBBA /* CustomView */,
 				70FAEDE02BBEEB6B003DEE12 /* Extension */,
@@ -391,9 +405,11 @@
 				705E3FED2BE4921200D4F70B /* QuantitySelector.swift in Sources */,
 				70A0D83D2BC8E3BC00AA35D4 /* Store.swift in Sources */,
 				70B97FA52BDB44E8003CDBBA /* Preview.swift in Sources */,
+				704F6B8B2BF5CB1A00F14C38 /* Popup.swift in Sources */,
 				70FAEDAA2BBEE2D8003DEE12 /* FruitMart_pjyApp.swift in Sources */,
 				70A0D83B2BC8E11000AA35D4 /* BundleExtention.swift in Sources */,
 				70FAEDE22BBEEB96003DEE12 /* ColorExtension.swift in Sources */,
+				704F6B8D2BF5CF8700F14C38 /* OrderCompletedMessage.swift in Sources */,
 				70D499792BED155C004292E3 /* Order.swift in Sources */,
 				704F6B832BF5C40300F14C38 /* Symbol.swift in Sources */,
 				70FAEDE52BBEED7A003DEE12 /* Product.swift in Sources */,
