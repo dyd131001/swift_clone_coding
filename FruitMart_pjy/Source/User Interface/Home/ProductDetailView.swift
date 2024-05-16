@@ -25,11 +25,8 @@ struct ProductDetailView: View {
 
 private extension ProductDetailView{
     var productImage: some View {
-        GeometryReader { _
-        in
-        Image(self.product.imageName)
-        .resizable()
-        .scaledToFill()
+        GeometryReader { _ in
+        ResizedImage(self.product.imageName)
         }
     }
 

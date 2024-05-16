@@ -16,8 +16,7 @@ struct QuantitySelector: View {
     var body: some View {
         HStack {
             Button(action: { self.changeQuantity(-1) }) { // 수량 감소 버튼
-                Image(systemName: "minus.circle.fill")
-                    .imageScale(.large)
+                Symbol("minus.circle.fill", scale: .large, color: Color.gray.opacity(0.5))
                     .padding()
             }
             .foregroundColor(Color.gray.opacity(0.5))
@@ -26,11 +25,9 @@ struct QuantitySelector: View {
                 .font(Font.system(.title, design: .monospaced)) // (2)
                 .frame(minWidth: 40, maxWidth: 60)
             Button(action: { self.changeQuantity(1) }) { // 수량 증가 버튼
-                Image(systemName: "plus.circle.fill")
-                    .imageScale(.large)
+                Symbol("plus.circle.fill", scale: .large, color: Color.gray.opacity(0.5))
                     .padding()
             }
-            .foregroundColor(Color.gray.opacity(0.5))
         }
     }
     private func changeQuantity( _ num: Int) {

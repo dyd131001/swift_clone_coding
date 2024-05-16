@@ -26,9 +26,7 @@ struct ProductRow: View {
 
 private extension ProductRow{
     var productImage: some View {
-        Image(product.imageName) // 상품 이미지
-            .resizable()
-            .scaledToFill()
+        ResizedImage(product.imageName)
             .frame(width: 140)
             .clipped()
     }
@@ -55,9 +53,8 @@ private extension ProductRow{
             Text("￦").font(.footnote) + Text("\(product.price)").font(.headline) // 가격 정보
             Spacer()
             FavoriteButton(product: product)
-            Image(systemName: "cart") // 카트 아이콘
-                .foregroundColor(Color.peach1)
-                .frame(width: 32, height: 32)
+            Symbol("cart", color: Color.peach1)
+            .frame(width: 32, height: 32)
             }
             .padding([.leading,.bottom], 12)
             .padding([.top, .trailing])
