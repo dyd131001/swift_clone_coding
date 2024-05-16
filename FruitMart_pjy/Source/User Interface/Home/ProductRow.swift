@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ProductRow: View {
     let product: Product
+    @EnvironmentObject var store: Store
+    @Binding var quickOrder: Product?
+    
     var body: some View {
         HStack {
             productImage
@@ -54,24 +57,32 @@ private extension ProductRow{
             Spacer()
             FavoriteButton(product: product)
             Symbol("cart", color: Color.peach1)
-            .frame(width: 32, height: 32)
-            }
-            .padding([.leading,.bottom], 12)
-            .padding([.top, .trailing])
+                .frame(width: 32, height: 32)
+                .onTapGesture { self.orderProduct() }
+            
+        }
+        .padding([.leading,.bottom], 12)
+        .padding([.top, .trailing])
+    }
+    
+    
+    func orderProduct() {
+        quickOrder = product // 주문 상품 저장. 홈화면의 팝업창 출력 조건
+        store.placeOrder(product: product, quantity: 1) // 상품 1개 주문
     }
 
 }
 
 struct ProductRow_Previews: PreviewProvider {
     static var previews: some View {
-            Group {
-                ForEach(productSamples) {
-                    ProductRow(product: $0)
-                }
-                ProductRow(product: productSamples[0])
-                    .preferredColorScheme(.dark)
+        Group {
+            ForEach(productSamples) {
+                ProductRow(product: $0, quickOrder: .constant(nil))
             }
-            .padding()
-            .previewLayout(.sizeThatFits)
+            ProductRow(product: productSamples[0], quickOrder: .constant(nil))
+                .preferredColorScheme(.dark)
+        }
+        .padding()
+        .previewLayout(.sizeThatFits)
     }
 }
