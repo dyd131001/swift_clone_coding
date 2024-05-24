@@ -26,8 +26,7 @@ struct FruitMart_pjyApp: App {
     var body: some Scene {
         configurationAppearance()
         return WindowGroup {
-            Home()
-                .accentColor(Color.primary)
+            MainTabView()
                 .environmentObject(Store())
         }
         .modelContainer(sharedModelContainer)
@@ -38,6 +37,7 @@ struct FruitMart_pjyApp: App {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "peach")!]
         // inline 디스플레이 모드일 때 적용
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(named: "peach")!]
+        UITableView.appearance().backgroundColor = .clear
     }
 }
 

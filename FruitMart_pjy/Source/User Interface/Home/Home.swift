@@ -12,21 +12,28 @@ struct Home: View {
 
     @EnvironmentObject private var store: Store
     @State private var quickOrder: Product?
+    @State private var showingFavoriteImage: Bool = true
     
         
     var body: some View {
     
         NavigationView {
-            VStack{
-                Text("2019110485 박정용")
-                List(store.products) { product in
-                    NavigationLink(destination:  ProductDetailView(product: product)){
-                        ProductRow(product: product, quickOrder: self.$quickOrder)
-                    }
-                    //.buttonStyle(PlainButtonStyle()) // .onTapGesture
+
+            VStack {
+                if showFavorite { // 즐겨찾기 상품이 없으면 무시
+                    favoriteProducts // 구현해 둔 스크롤 뷰에 해당하는 프로퍼티
                 }
-                .navigationBarTitle("과일마트")
+                darkerDivider // (2)
+                if #available(iOS 16.0, *) {
+                    productList
+                        .scrollContentBackground(.hidden)
+                        .background(Color.background)
+                } else {
+                    productList
+                }
             }
+            .navigationBarTitle("과일마트")
+            
         }
         .popupOverContext(item: $quickOrder, style: .blur, content: popupMessage(product:))
     }
@@ -43,6 +50,46 @@ struct Home: View {
         }
     }
     
+    var favoriteProducts: some View { // 즐겨찾는 상품 목록
+        FavoriteProductScrollView(showingImage: $showingFavoriteImage)
+            .padding(.top, 24)
+            .padding(.bottom, 8)
+    }
+    
+    var darkerDivider: some View { // 커스텀 구분선
+        Color.primary
+            .opacity(0.3)
+            .frame(maxWidth: .infinity, maxHeight: 1)
+    }
+    
+    var productList: some View { // body에 있던 기존 코드 추출
+        List(store.products) { product in
+            if #available(iOS 15.0, *) {
+                ZStack {
+                    ProductRow(product: product, quickOrder: self.$quickOrder)
+                    NavigationLink(destination: ProductDetailView(product: product)) {
+                        EmptyView()
+                    }.frame(width: 0).opacity(0)
+                }
+                .listRowSeparator(.hidden) // iOS 15 이상
+                .listRowBackground(Color.background)
+            }
+            else {
+                ZStack {  
+                    ProductRow(product: product, quickOrder: self.$quickOrder)
+                    NavigationLink(destination: ProductDetailView(product: product)) {
+                        EmptyView()
+                    }.frame(width: 0).opacity(0)
+                }
+                    .listRowBackground(Color.background)
+            }
+        }
+    }
+    
+    
+    var showFavorite: Bool { // 즐겨찾는 상품 유무 확인
+        !store.products.filter({ $0.isFavorite }).isEmpty
+    }
     
 }
 

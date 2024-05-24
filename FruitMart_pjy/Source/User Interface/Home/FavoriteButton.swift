@@ -16,18 +16,12 @@ struct FavoriteButton: View {
     }
     
     var body: some View {
-        Button(action: {
-            self.store.toggleFavorite(of: self.product) // 상품에 대한 즐겨찾기 설정 변경
-        }) {
-            Symbol(imageName, scale: .large, color: .peach)
-                .frame(width: 32, height: 32)
-                .onTapGesture { self.store.toggleFavorite(of: self.product) }
-                .frame(width: 32, height: 32)
-                .onTapGesture {
-                    self.store.toggleFavorite(of: self.product)
-                }
+        Symbol(imageName, scale: .large, color: .peach)
+            .frame(width: 32, height: 32)
+            .onTapGesture {
+            self.store.toggleFavorite(of: self.product)
+            }
         }
-    }
 }
 
 struct FavoriteButton_Previews: PreviewProvider {

@@ -41,8 +41,8 @@ private extension ProductDetailView{
                 self.priceInfo
                 self.placeOrderButton
             }
-            .frame(height: $0.size.height - 32)
             .padding(32)
+            .frame(height: $0.size.height - 32)
             .background(Color.white) // 다크 모드에서도 흰색 배경을 사용하기 위해 white 지정
             .cornerRadius(16)
             .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: -5)
